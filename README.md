@@ -1,12 +1,12 @@
-# 🌦️ Seattle Weather Prediction using Decision Tree
+# Seattle Weather Prediction using Decision Trees
 
-This project demonstrates how to build and evaluate a **Decision Tree Classifier** to predict Seattle's weather (Rain or Sun) based on historical data. The notebook includes steps from data preprocessing to model training, evaluation, and visualization.
+This repository contains a Jupyter Notebook that demonstrates how to build and evaluate a Decision Tree Classifier to predict Seattle weather (Rain or Sun) using historical weather data. The project covers everything from data loading and cleaning to model training, visualization, and evaluation.
 
 ---
 
-## 📁 Dataset
+## Dataset
 
-The dataset includes daily records of:
+The dataset includes daily weather records with the following features:
 - `precipitation`
 - `temp_max`
 - `temp_min`
@@ -15,57 +15,54 @@ The dataset includes daily records of:
 
 ---
 
-## 📚 Tools Used
+## Libraries Used
 
-- **Python 3.9+**
-- **pandas** – Data manipulation
-- **matplotlib** – Visualization
-- **scikit-learn** – Machine learning
+- `pandas` for data manipulation
+- `matplotlib` for data visualization
+- `scikit-learn` for machine learning
 
 ---
 
-## 🧠 Tasks Covered
+## Tasks Performed
 
-### ✅ 1. Data Loading & Cleaning
-- Loaded data using `pandas`
-- Filtered relevant weather classes (Rain, Sun)
-- Dropped missing/null values
+### 1. Data Preparation
+- Loaded the dataset and filtered for only "Rain" and "Sun" days
+- Handled missing values and cleaned the data
 
-### ✅ 2. Data Exploration
-- Summary statistics
-- Count of rainy days
-- Visualized weather distribution
+### 2. Exploratory Analysis
+- Generated summary statistics
+- Counted days with rain
+- Plotted the distribution of weather types
 
-### ✅ 3. Train-Test Split
-- Used `train_test_split` with `test_size=0.2`
+### 3. Train-Test Split
+- Split the dataset into 80% training and 20% testing using `train_test_split`
 - Set `random_state=42` for reproducibility
 
-### ✅ 4. Model Training
-- Trained a `DecisionTreeClassifier` with `max_depth=6`
-- Used `fit()` with training data
+### 4. Model Training
+- Trained a Decision Tree Classifier using `max_depth=6` to prevent overfitting
+- Used `fit()` with the training data
 
-### ✅ 5. Visualization
-- Visualized decision tree using `sklearn.tree.plot_tree()`
+### 5. Tree Visualization
+- Visualized the trained decision tree using `plot_tree()` from `sklearn.tree`
 
-### ✅ 6. Model Evaluation
-- Predictions made with `predict()`
-- Accuracy score using `accuracy_score`
+### 6. Model Evaluation
+- Made predictions on the test set
+- Calculated the accuracy score of the model
 
-### ✅ 7. Bonus (Optional)
-- Trained a second model without `max_depth`
-- Accuracy dropped due to overfitting
-
----
-
-## 📊 Accuracy Results
-
-| Model Type                  | Accuracy |
-|-----------------------------|----------|
-| Decision Tree (`max_depth=6`)   | **81.23%** |
-| Full Tree (no depth limit)      | **73.04%** ❌ Lower due to overfitting |
-
-> The deeper tree model overfit the training data and performed worse on unseen test data.
+### 7. Optional Task: Overfitting Analysis
+- Trained a second model without specifying `max_depth`
+- Observed a drop in accuracy due to overfitting on training data
 
 ---
 
+## Results
+
+| Model Configuration           | Accuracy |
+|------------------------------|----------|
+| Decision Tree (max_depth=6)  | 81.23%   |
+| Full Tree (no depth limit)   | 73.04%   |
+
+The second model overfits the training data, which led to a lower accuracy score on the test set.
+
+---
 
